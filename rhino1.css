@@ -1,0 +1,247 @@
+html {
+	scroll-behavior: smooth;
+    background: url(Images/Jungle.jpg) no-repeat center fixed; 
+    background-size: cover;
+    height: 100%;
+    min-height: calc(100vh-211px-58px);
+  
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'montserrat';
+}
+.menu-area {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background-color: rgba(224, 228, 231, 0.2);
+	width: 100%;
+	height: 70px;
+	z-index: 1;
+}
+.nav {
+	display: flex;
+	justify-content: right;
+	list-style: none;
+	margin-right: 15%;
+}
+li a.active {
+    color: white;
+  }
+.logo {
+	flex: 1 1 auto;
+	margin-left: 10%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+	font-size: 25px;
+}
+a {
+	margin: 15px;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+a:hover {
+	color: #000;
+}
+#home {
+	position: relative;
+	background-image: url(Images/Rhino1.jpg);
+	width: 100%;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+}
+#home .content {
+	width: 100%;
+}
+#home .content h1 {
+	font-size: 60px;
+	margin: 10px 0;
+	color: wheat;
+}
+#home .content p {
+	width: 50%;
+	margin: auto;
+	line-height: 1.6;
+	color: white;
+}
+#value, #speed, #skin, #horns {
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width: 100%;
+	height: 20vh;
+}
+.content {
+	width: 80%;
+	height: 100%;
+	padding: 15% 0;
+    color: wheat;
+}
+.content h1 {
+	font-size: 30px;
+	text-transform: uppercase;
+}
+.content p {
+	font-size: 24px;
+	line-height: 50px;
+}
+@media (max-width: 800px) {
+	.logo {
+		text-align: center;
+	}
+	.nav {
+		margin: 0;
+		padding: 0;
+	}
+	.nav a {
+		font-size: 10px;
+		margin: 10px;
+	}
+	#home .content h1 {
+		font-size: 30px;
+	}
+	#home .content p {
+		width: 90%;
+		font-size: 16px;
+	}
+	.content {
+		padding: 50% 0;
+	}
+	#value, #speed, #skin, #horns {
+		flex-direction: column;
+		padding: 180px 0;
+	}
+	#speed .content {
+		padding: 96px 0;
+	}
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+    line-height: 1.5;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.footercontainer{
+    max-width: 1170px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+    
+}
+.footer{
+    background-color: #07553b;
+    padding: 70px 0;
+    position: relative;
+    top: 500px;
+    color: #ffffff;
+    margin-top: auto;
+}
+
+.l-footer {
+    margin-right: 1.25em;
+    margin-bottom: 2em;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: -5;
+    bottom: -10px;
+    background-color: #1776b6;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 10px;
+}
+
+.footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+
+/*responsive*/
+
+@media (max-width: 860px) {
+    .footer-col{
+        width: 33.3%;
+        margin-bottom: 15px;
+    }
+}
+@media(max-width: 767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media(max-width: 574px){
+    .footer-col{
+        width: 100%;
+    }
+    .l-footer{
+        flex: 1 0px;
+    }
+}

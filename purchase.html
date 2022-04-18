@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Purchase/Donate</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+   
+</head>
+<body>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <img src="Images/Elephant zoo 2.jpg" alt="Logo">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="animalsandplants.html">ANIMALS/PLANTS<a></li>
+      <li><a href="activities.html">ACTIVITIES</a></li>
+      <li><a class="active" href="purchase.html">PURCHASE</a></li>
+      <li><a href="contactus.html">CONTACT US</a></li>
+  </ul>
+  </nav>
+  <div class="purchaseBanner">
+    <h2>Purchase/Donate</h2>
+  </div>
+
+  <div class="purchaseForms">
+  <form id="frmPurchase">
+    Ticket Type :
+    <select id="cmbTicket" name="cmbTicket" onchange="calculateCost();">
+      <option value="">--Select Here--</option>
+      <option value="0">Day Pass</option>
+      <option value="1">Student Pass</option>
+      <option value="2">Foreigner Pass</option>
+    </select>
+    <br />
+    <br />
+      
+     Adults :
+     <input type="text" size="5" id="txtAdults" name="txtAdults" onblur="calculateCost();" />
+     Children :
+     <input type="text" size="5" id="txtChildren" name="txtChildren"onblur="calculateCost();" />
+     <br />
+     <br />
+     Duration :
+     <select id="cmbDur" name="cmbDur" onchange="calculateCost();">
+      <option value="">3 Hours</option>
+      <option value="0">1/2 Day</option>
+      <option value="1">Full Day</option>
+      <option value="2">2 Days</option>
+    </select>   
+    <br />
+    <br />
+    <label for="optional">
+      <input type="checkbox" id="optional" onclick="extras();">
+      Extras :
+    </label>
+    <div id="divExtras" style="display: none;">
+    Annual Pass :
+    <input type="text" size="3" id="txtAnnual" name="txtAnnual" onblur="calculateCost();" />
+    Food Tokens :
+    <input type="text" size="3" id="txtFood" name="txtFood" onblur="calculateCost();" />
+  </div>
+  <br />
+  <br />
+    Cost : <span id="spCost">0.00</span>
+    <br />
+    <br />
+    <input type="button" value="Add To Order" onclick="addToOrder();" /><br>
+    <input type="button" value="Add To Favourites" id="addFave">
+    <input type="button" value="Retrieve From Favourites" id="retrieveFave"><br>
+    <input type="button" value="Check Loyalty Points" id="checkLoyalty" onclick="showLoyaltyPoints();"><br>
+  </form> 
+
+  <div id="divOrder" style="display: none;">
+    <hr />
+    <h1>Overall Order</h1>
+    <table border="1" width="50%" id="tbl_order">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Adult</th>
+          <th>Children</th>
+          <th>Duration</th>
+          <th>Annual Passes</th>
+          <th>Food Tokens</th>
+          <th>Total</th>
+          <th>Clear</th>
+        </tr>
+      </thead>
+      <tbody id="tbody_order"></tbody>
+      <tfoot>
+        <tr>
+          <th colspan="6">Sub Total</th>
+          <th colspan="2" id="SubTotal">0.00</th>
+        </tr>
+      </tfoot>
+    </table>
+    <input type="button" value="Place Order" onclick="placeOrder();"/>
+  </div>
+
+  <h2>Donate</h2>
+<form id="frmDonate">
+     Donate Amount :
+    <select id="cmbDonate">
+      <option value="">--Select Here--</option>
+      <option value="0">100</option>
+      <option value="1">250</option>
+      <option value="2">500</option>
+      <option value="3">1000</option>
+      <option value="4">2500</option>
+      <option value="5">5000</option>
+      <option value="6">10000</option>
+    </select>
+    <br />
+    <br />
+     Basic Information :
+     <br />
+     <br />
+     <section id="details">
+        <div class="contact-info">
+        <form class="clearfix">
+          <div class="input-group-2">
+          <label>First Name:</label>
+          <input type="text">
+          </div>
+          <div class="input-group-2">
+          <label>Last Name:</label>
+          <input type="text">
+          </div>
+          <div class="input-group-1">
+          <label>Email Address:</label>
+          <input type="text">
+          </div>
+          <div class="input-group-1">
+          <label>Street Address:</label>
+          <input type="text">
+          </div>
+          <div class="input-group-3">
+          <label>City:</label>
+          <input type="text">
+          </div>
+        </form>
+        </section>
+        <br />
+        
+ Card Information :
+     <br />
+     <br />
+    <section id="card">
+        <div class="contact-info">
+      <form class="clearfix">
+        <div class="input-group-1">
+        <label>Card Name:</label>
+        <input type="text">
+        </div>
+        <div class="clearfix">
+        <div class="input-group-2">
+        <label>Card Number:</label>
+        <input type="text">
+        </div>
+        
+        <div class="input-group-2">
+        <label>Expiration Date:</label>
+        <input type="text">
+        </div>
+        </div>
+
+        <div class="input-group-1">
+        <label>Security Code (CVV):</label>
+        <input type="text">
+        </div>
+      </form>
+      <div class="clearfix">
+        <button onclick="mySubmit()">Complete Donation</button>
+        <p id="confirm"></p>
+
+      </div>
+      </div>
+    </section>
+    <br />
+    <hr>
+</form>
+  </div>
+</form>
+  
+
+
+<!-----------------------------------Footer----------------------------------------------------------------------->
+<section>
+  <footer class="footer">
+     
+     <div class="footercontainer">
+         <div class="row">
+             <div class="footer-col">
+                 <h4>Park Info</h4>
+                 <ul>
+                     <li><a href="#">About Us</a></li>
+                     <li><a href="#">News/Events</a></li>
+                     <li><a href="#">More Info</a></li>
+                 </ul>
+             </div>
+             <div class="footer-col">
+                 <h4>Visit</h4>
+                 <ul>
+                     <li><a href="http://nationalzoo.gov.lk/zoo/safari-park/">Ridiyagama Safari Park</a></li>
+                     <li><a href="http://nationalzoo.gov.lk/pinnawalazoo/">Pinnawala Zoo</a></li>
+                     <li><a href="http://nationalzoo.gov.lk/elephantorphanage/">Pinnawala Elephant Orphanage</a></li>
+                     <li><a href="http://www.president.gov.lk/">President of Sri Lanka</a></li>
+                     <li><a href="http://www.presidentsoffice.gov.lk/">Presidential Secretariat</a></li>
+                 </ul>
+             </div>
+             <div class="footer-col">
+                 <h4>Contact Us</h4>
+                 <ul>
+                     <li><a href="#">Address: <br>Department of National Zoological Gardens, Anagarika Dharmapala Mawatha, Dehiwala</a></li>
+                     <li><a href="#">Hotline: <br>011-2712751</a></li>
+                     <li><a href="#">Email: <br> zoosl@slt.lk</a></li>
+                 </ul>
+             </div>
+             <div class="footer-col">
+                 <h4>Follow Us</h4>
+                 <div class="social-links">
+                     <a href="#"><i class="fab fa-facebook-f"></i></a>
+                     <a href="#"><i class="fab fa-twitter"></i></a>
+                     <a href="#"><i class="fab fa-instagram"></i></a>
+                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </footer>
+ </section>
+
+</section>
+<script src="purchase.js"></script>
+</body>
+</html>
